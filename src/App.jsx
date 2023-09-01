@@ -1,12 +1,13 @@
-import { useState } from 'react';
+import { useState} from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { getUser } from './utilities/users-service';
 // pages
 import AuthPage from './pages/AuthPage/AuthPage';
-import NewOrderPage from './pages/NewOrderPage/NewOrderPage';
-import OrderHistoryPage from './pages/OrderHistoryPage/OrderHistoryPage';
+import CreateRecipe from './pages/CreateRecipe/CreateRecipe';
+import SavedRecipes from './pages/SavedRecipes/SavedRecipes'
+
 // components
-import NavBar from './components/NavBar/NavBar';
+import NavBar from './components/NavBar/NavBar'
 // css
 import './App.css';
 
@@ -20,8 +21,8 @@ function App() {
         <>
           <NavBar user={user} setUser={setUser} />
           <Routes>
-            <Route path='/orders/new' element={<NewOrderPage />} />
-            <Route path='/orders' element={<OrderHistoryPage />} />
+            <Route path='/CreateRecipe' element={<CreateRecipe user={user} setUser={setUser}/>} />
+            <Route path='/SavedRecipes' element={<SavedRecipes user={user} setUser={setUser}/>} />
           </Routes>
         </>
       ) : (

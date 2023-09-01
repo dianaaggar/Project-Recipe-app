@@ -7,7 +7,7 @@ export default function AuthPage({ setUser }) {
   return (
     <main>
       <div>
-        <h1>Auth Page</h1>
+        <h1>Healthy Recipe App</h1>
         <button
           onClick={() => {
             setShowLogin(!showLogin);
