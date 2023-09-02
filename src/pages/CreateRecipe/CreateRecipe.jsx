@@ -2,9 +2,9 @@ import * as createRecipe from '../../utilities/createRecipe'
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
+
 export default function CreateRecipe(){
-    // const userID = useGetUserID();
-    // const [cookies] = useCookies(["access_token"]);
+
     const [recipe, setRecipe] = useState({
     name: "",
     description: "",
@@ -12,7 +12,7 @@ export default function CreateRecipe(){
     instructions: "",
     imageUrl: "",
     cookingTime: 0,
-    // userOwner: userID,
+
 });
 
     const navigate = useNavigate();
@@ -44,8 +44,8 @@ export default function CreateRecipe(){
     console.error(error);
     }
 };
-    return (
-        <div className="create-recipe">
+    return ( 
+        <main className="create-recipe">
         <h2>Create Recipe</h2>
             <form onSubmit={handleSubmit}>
             <label htmlFor="name">Name</label>
@@ -101,7 +101,7 @@ export default function CreateRecipe(){
             />
             <button type="submit">Create Recipe</button>
         </form>
-        </div>
+        </main>
     );
     };
     

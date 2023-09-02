@@ -4,7 +4,8 @@ import { getUser } from './utilities/users-service';
 // pages
 import AuthPage from './pages/AuthPage/AuthPage';
 import CreateRecipe from './pages/CreateRecipe/CreateRecipe';
-import SavedRecipes from './pages/SavedRecipes/SavedRecipes'
+import SavedRecipes from './pages/SavedRecipes/SavedRecipes';
+import HomePage from './pages/HomePage/HomePage'
 
 // components
 import NavBar from './components/NavBar/NavBar'
@@ -21,6 +22,7 @@ function App() {
         <>
           <NavBar user={user} setUser={setUser} />
           <Routes>
+            <Route path='/' element={<HomePage user={user} setUser={setUser}/>} />
             <Route path='/CreateRecipe' element={<CreateRecipe user={user} setUser={setUser}/>} />
             <Route path='/SavedRecipes' element={<SavedRecipes user={user} setUser={setUser}/>} />
           </Routes>

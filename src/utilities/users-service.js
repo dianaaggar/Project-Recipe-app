@@ -52,4 +52,3 @@ export async function checkToken() {
   // make it a Date object for more flexibility
   return usersAPI.checkToken().then((dateStr) => new Date(dateStr));
 }
-//const token = await usersAPI.signUp(userData);
