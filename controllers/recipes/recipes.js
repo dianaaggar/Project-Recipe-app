@@ -26,9 +26,9 @@ const showRecipe = async (req, res) => {
 };
 
 // Get a specific recipe by ID
-const getRecipeById = async (req, res) => {
+const findRecipe = async (req, res) => {
   try {
-    const recipe = await Recipe.findById(req.params.id);
+    const recipe = await Recipe.findById(req.body);
     if (!recipe) {
       res.status(404).json({ error: 'Recipe not found' });
     } else {
@@ -71,11 +71,13 @@ const deleteRecipeById = async (req, res) => {
   }
 };
 
+
 module.exports = {
   createRecipe,
   showRecipe,
-  getRecipeById,
+  findRecipe,
   updateRecipeById,
   deleteRecipeById,
 };
+
 

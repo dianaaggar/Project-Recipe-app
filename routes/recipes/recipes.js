@@ -5,6 +5,7 @@ const Recipe = require('../../controllers/recipes/recipes'); // import the Recip
 // Create a new recipe
 router.post('/', Recipe.createRecipe) 
 router.get('/showrecipe', Recipe.showRecipe) 
+router.post('/findrecipe', Recipe.findRecipe) 
 
 // Get a list of all recipes
 router.get('/', async (req, res) => {
