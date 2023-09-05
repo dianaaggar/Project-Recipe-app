@@ -1,89 +1,66 @@
-// const express = require('express');
-// const router = express.Router();
-
-// const recipesCtrl = require('../../controllers/api/users');
-
-// const ensureLoggedIn = require('../../config/ensureLoggedIn');
-
-// // POST /api/users
-// router.post('/', recipesCtrl.create);
-
-// // POST /api/users/login
-// router.post('/login', recipesCtrl.login);
-
-// // GET /api/users/check-token
-// router.get('/check-token', ensureLoggedIn, recipesCtrl.checkToken);
-
-// module.exports = router;
-const express = require('express');
-const mongoose = require('mongoose');
-const recipe = require('../../routes/recipes/recipes');
-
+const express = require('express')
 const router = express.Router();
+const Recipe = require('../../models/Recipe'); // Import the Recipe model
 
-router.get('/', async (req, res) =>{
-    try {
-        const response = await recipe.find({})
-        res.json(response)
+// Create a new recipe
+router.post('/', async (req, res) => {
+try {
+    const newRecipe = await Recipe.create(req.body);
+    res.status(201).json(newRecipe);
+} catch (err) {
+    res.status(400).json({ error: err.message });
+}});
 
-    } catch (err) {
-        res.json(err);
+// Get a list of all recipes
+router.get('/', async (req, res) => {
+try {
+    const recipes = await Recipe.find();
+    res.status(200).json(recipes);
+} catch (err) {
+    res.status(500).json({ error: err.message });
+}});
 
+// Get a specific recipe by ID
+router.get('/:id', async (req, res) => {
+try {
+    const recipe = await Recipe.findById(req.params.id);
+    if (!recipe) {
+    res.status(404).json({ error: 'Recipe not found' });
+    } else {
+    res.status(200).json(recipe);
     }
+} catch (err) {
+    res.status(500).json({ error: err.message });
+}});
 
-});
-
-router.post('/', async (req, res) =>{
-    const recipe = new recipe(req.body)
-    try {
-        const response = await recipe.save();
-        res.json(response)
-
-    } catch (err) {
-        res.json(err);
-
+// Update a recipe by ID
+router.put('/:id', async (req, res) => {
+try {
+    const updatedRecipe = await Recipe.findByIdAndUpdate(
+    req.params.id,
+    req.body,
+    { new: true }
+    );
+    if (!updatedRecipe) {
+    res.status(404).json({ error: 'Recipe not found' });
+    } else {
+    res.status(200).json(updatedRecipe);
     }
+} catch (err) {
+    res.status(500).json({ error: err.message });
+}});
 
-});
-
-router.put('/', async (req, res) =>{
-    try {
-    const recipe = await recipe.findById(req.body.recipeID);
-    const user= await user.findById(req.body.userID);
-
-    user.savedRecipes.push(recipe);
-    await user.save();
-    res.json({savedRecipes: user.savedRecipes});
-
-    } catch (err) {
-        res.json(err);
-
+// Delete a recipe by ID
+router.delete('/:id', async (req, res) => {
+try {
+    const deletedRecipe = await Recipe.findByIdAndRemove(req.params.id);
+    if (!deletedRecipe) {
+    res.status(404).json({ error: 'Recipe not found' });
+    } else {
+    res.status(200).json({ message: 'Recipe deleted' });
     }
+} catch (err) {
+    res.status(500).json({ error: err.message });
+}});
 
-});
-router.get('/savedRecipes/ids', async (req, res)=> {
-    try {
-        const user = await User.findById(req.body.userID)
-        res.json({savedRecipes: user?.savedRecipes})
-
-    } catch (err) {
-        res.json(err)
-    }
-})
-
-router.get('/savedRecipes', async (req, res)=> {
-    try {
-        const user = await User.findById(req.body.userID)
-        const savedRecipes = await recipe.find({
-            _id: {$in: user.savedRecipes}
-        })
-        res.json({savedRecipes})
-
-    } catch (err) {
-        res.json(err)
-    }
-})
-
-
-
-module.exports = router 
+module.exports = router;

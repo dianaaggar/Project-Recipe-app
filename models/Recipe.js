@@ -1,6 +1,7 @@
-// create schema for the recipe
+// Import the required modules
 const mongoose = require('mongoose');
 
+// Define a Mongoose schema for Recipe
 const recipeSchema = new mongoose.Schema({
 name: {
     type: String,
@@ -10,10 +11,12 @@ description: {
     type: String,
     required: true,
     },
-ingredients: [{
+ingredients: [
+    {
     type: String,
     required: true,
-    }],
+    },
+    ],
 instructions: {
     type: String,
     required: true,
@@ -32,10 +35,13 @@ createdAt: {
     },
 userOwner: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: 'users',
-    required:true,
-}
+    ref: 'User',
+    required: true,
+    },
 });
 
-module.exports = mongoose.model('Recipe', recipeSchema);
+// Create a Mongoose model for Recipe
+const Recipe = mongoose.model('Recipe', recipeSchema);
 
+// Export the Recipe model to be used in other parts of the application
+module.exports = Recipe;
