@@ -1,20 +1,12 @@
-// export const SavedRecipes = () => {
-//     return <div>
-//         Saved Recipes
-//     </div>
-// };
+import React from 'react';
+import SavedRecipeList from './SavedRecipeList/SavedRecipeList'; // Update the import path
 
-import axios from "axios";
-
-    export const SavedRecipes = async (recipe, cookies) => {
-
-    try {
-    await axios.post(
-        "/SavedRecipes",
-        { ...recipe },
-    );
-
-    } catch (error) {
-    console.error(error);
-    }
+const SavedRecipes = () => {
+return (
+    <div>
+        <SavedRecipeList />
+    </div>
+);
 };
+
+export default SavedRecipes;

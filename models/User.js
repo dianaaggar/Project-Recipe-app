@@ -33,6 +33,9 @@ const userSchema = new Schema(
     },
   }
 );
+// savedRecipes: [{type: mongoose.Schema.Types.ObjectId,
+// ref: 'recipes',
+// }];
 
 userSchema.pre('save', async function (next) {
   // 'this' is the user doc
