@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { showRecipe } from "../../utilities/homePage";
-import axios from "axios"
+
 import * as savedRecipesUtilities from "../../utilities/savedRecipes"
 
 export default function HomePage(){
@@ -36,6 +36,8 @@ export default function HomePage(){
         console.log(deleteRecipes)
     }
 
+
+
     return(
     <div>
         {inforecipe? inforecipe.map((current,i)=>{
@@ -43,26 +45,27 @@ export default function HomePage(){
             return(
 
                 <div key={i}>
-                    {current.name}
-                    <br/>
-                    {current.description}
-                    <br/>
-                    {current.ingredients}
-                    <br/>
-                    {current.instructions}
-                    <br/>
-                    {current.cookingTime}
-                    <br/>
+                <h3> Name:  {current.name} </h3>
+            
+                <h4> Description: {current.description} </h4> 
+                    
+                <h4> Ingredients: {current.ingredients} </h4>
+                
+                <h4> Instructions: {current.instructions} </h4>
+                    
+                    <h2> Cooking Time: {current.cookingTime} mn</h2>
+                    
                     <img src={current.imageUrl} alt=""/>
 
 
-                    <form onSubmit={(event)=> save(event,current._id)}>
-                    {id=current.id}
-                    <button type="submit"> Save the recipe </button>
-                    </form>
-
-                    <button type="submit" onClick={(event) =>deleteRecipe(event,current._id) }>{id=current.id} Delete the recipe </button>
+                    <form>
+                    <button type="submit" onClick={(event)=> save(event,current._id)}>
+                    {id=current.id} Save the recipe </button>
                     
+                    <button type="submit" onClick={(event) =>deleteRecipe(event,current._id) }>{id=current.id} Delete the recipe </button>
+                
+
+                    </form>
 
                 </div>
             )
