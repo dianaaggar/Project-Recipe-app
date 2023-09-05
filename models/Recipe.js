@@ -33,15 +33,11 @@ createdAt: {
     type: Date,
     default: Date.now,
     },
-// userOwner: {
-//     type: mongoose.Schema.Types.ObjectId,
-//     ref: 'User',
-//     required: true,
-//     },
+
 });
 
-// Create a Mongoose model for Recipe
+// create a Mongoose model for Recipe
 const Recipe = mongoose.model('Recipe', recipeSchema);
 
-// Export the Recipe model to be used in other parts of the application
+// export the Recipe model to be used in other parts of the application
 module.exports = Recipe;
