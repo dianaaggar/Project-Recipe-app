@@ -24,10 +24,15 @@ export default function HomePage(){
 
                 <div key={i}>
                     {current.name}
+                    <br/>
                     {current.description}
+                    <br/>
                     {current.ingredients}
+                    <br/>
                     {current.instructions}
+                    <br/>
                     {current.cookingTime}
+                    <br/>
                     <img src={current.imageUrl}/>
 
 
