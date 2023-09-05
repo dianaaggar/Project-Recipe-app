@@ -38,7 +38,7 @@ export default function CreateRecipe(){
     event.preventDefault();
     try {
     await createRecipe.CreateRecipe(recipe)
-    alert("Recipe Created");
+    console.log(recipe);
     navigate("/");
     } catch (error) {
     console.error(error);
@@ -69,7 +69,7 @@ export default function CreateRecipe(){
                 key={index}
                 type="text"
                 name="ingredients"
-                value={ingredient}
+                value={recipe.ingredient}
                 onChange={(event) => handleIngredientChange(event, index)}
             />
             ))}

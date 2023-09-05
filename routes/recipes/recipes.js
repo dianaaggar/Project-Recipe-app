@@ -1,15 +1,10 @@
 const express = require('express')
 const router = express.Router();
-const Recipe = require('../../models/Recipe'); // Import the Recipe model
+const Recipe = require('../../controllers/recipes/recipes'); // import the Recipe model
 
 // Create a new recipe
-router.post('/', async (req, res) => {
-try {
-    const newRecipe = await Recipe.create(req.body);
-    res.status(201).json(newRecipe);
-} catch (err) {
-    res.status(400).json({ error: err.message });
-}});
+router.post('/', Recipe.createRecipe) 
+router.get('/showrecipe', Recipe.showRecipe) 
 
 // Get a list of all recipes
 router.get('/', async (req, res) => {

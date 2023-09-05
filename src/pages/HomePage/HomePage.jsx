@@ -1,5 +1,41 @@
+import { useState, useEffect } from "react";
+import { showRecipe } from "../../utilities/homePage";
+
 export default function HomePage(){
+    const[inforecipe, setInforecipe] = useState();
+
+    useEffect(() =>{ 
+        
+        const getallrecipe= showRecipe() 
+    let allrecipes = []
+    getallrecipe.then(result=> {result.map((current)=>{
+        allrecipes.push(current)
+        setInforecipe(allrecipes)
+
+    })})
+    
+    },[])
+    console.log('reciiipes', inforecipe)
+
     return(
-        <h1>Home</h1>
-    )
+    <div>
+        {inforecipe? inforecipe.map((current,i)=>{
+            return(
+
+                <div key={i}>
+                    {current.name}
+                    {current.ingredients}
+                    <img src={current.imageUrl}/>
+
+
+                </div>
+            )
+        
+
+        }): ""}
+
+    </div>
+
+    
+)
 } 

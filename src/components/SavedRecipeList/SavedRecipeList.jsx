@@ -17,7 +17,7 @@ return (
             <li key={index}>
         <h3>{recipe.name}</h3>
             <p>Description: {recipe.description}</p>
-            {/* Add more details as needed */}
+
             </li>
         ))}
     </ul>

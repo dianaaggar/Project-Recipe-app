@@ -5,6 +5,7 @@ const Recipe = require('../../models/Recipe');
 // Create a new recipe
 const createRecipe = async (req, res) => {
 try {
+  console.log(req.body)
     const newRecipe = await Recipe.create(req.body);
     res.status(201).json(newRecipe);
 } catch (err) {
@@ -13,9 +14,11 @@ try {
 };
 
 // Get a list of all recipes
-const getAllRecipes = async (req, res) => {
+const showRecipe = async (req, res) => {
   try {
-    const recipes = await Recipe.find();
+    const recipes = await Recipe.find({});
+    console.log(recipes)
+  
     res.status(200).json(recipes);
   } catch (err) {
     res.status(500).json({ error: err.message });
@@ -70,7 +73,7 @@ const deleteRecipeById = async (req, res) => {
 
 module.exports = {
   createRecipe,
-  getAllRecipes,
+  showRecipe,
   getRecipeById,
   updateRecipeById,
   deleteRecipeById,

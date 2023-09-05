@@ -33,11 +33,11 @@ createdAt: {
     type: Date,
     default: Date.now,
     },
-userOwner: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'User',
-    required: true,
-    },
+// userOwner: {
+//     type: mongoose.Schema.Types.ObjectId,
+//     ref: 'User',
+//     required: true,
+//     },
 });
 
 // Create a Mongoose model for Recipe
