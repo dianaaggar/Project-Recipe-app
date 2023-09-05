@@ -33,7 +33,7 @@ export default function HomePage(){
                     <br/>
                     {current.cookingTime}
                     <br/>
-                    <img src={current.imageUrl}/>
+                    <img src={current.imageUrl} alt=""/>
 
 
                 </div>
