@@ -31,3 +31,5 @@ const User = mongoose.model('User', userSchema);
 
 // Export the User model to be used in other parts of the application
 module.exports = User;
+
+

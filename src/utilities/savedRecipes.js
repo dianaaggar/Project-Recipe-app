@@ -2,6 +2,7 @@
 import axios from "axios";
 
 export const saveRecipe = async (data) => {
+
 try {
 const postrecipe = await axios.post("recipes/recipes/saveRecipe",data);
 return(
@@ -13,8 +14,9 @@ return(
 };
 
 export const findRecipe = async (data) => {
+    console.log(data)
     try {
-    const postrecipe = await axios.post("recipes/recipes/findRecipe",data);
+    const postrecipe = await axios.post("recipes/recipes/findrecipe",data);
     return(
         postrecipe.data
     )
@@ -22,3 +24,15 @@ export const findRecipe = async (data) => {
         console.error(error);
     }
     };
+
+    export const deleteRecipe = async (id) => {
+        console.log(id)
+        try {
+        const postrecipe = await axios.delete(`recipes/recipes/${id}`);
+        return(
+            postrecipe.data
+        )
+        } catch (error) {
+            console.error(error);
+        }
+        };

@@ -1,10 +1,11 @@
 import { useState, useEffect } from "react";
 import { showRecipe } from "../../utilities/homePage";
+import axios from "axios"
 import * as savedRecipesUtilities from "../../utilities/savedRecipes"
 
 export default function HomePage(){
     const[inforecipe, setInforecipe] = useState();
-let id = null
+    let id = null
     useEffect(() =>{ 
         
         const getallrecipe= showRecipe() 
@@ -18,15 +19,21 @@ let id = null
     },[])
     console.log('reciiipes', inforecipe)
 
-    const save = (event,id) =>{ 
+    const save = async (event,id) =>{ 
         event.preventDefault()
-        const findRecipe = savedRecipesUtilities.findRecipe()
-        console.log(id)
-        console.log(findRecipe)
+        // const findRecipe = await axios.post("recipes/recipes/findrecipe",{id})
+        // console.log(id)
+        // console.log(findRecipe.data)
+        const response = await savedRecipesUtilities.findRecipe({id})
+        console.log(response)
 
     }
 
-    const deleteRecipe = () =>{ 
+    const deleteRecipe = async (event,id) =>{
+        event.preventDefault()
+
+        const deleteRecipes = await savedRecipesUtilities.deleteRecipe(id)
+        console.log(deleteRecipes)
     }
 
     return(
@@ -48,12 +55,13 @@ let id = null
                     <br/>
                     <img src={current.imageUrl} alt=""/>
 
+
                     <form onSubmit={(event)=> save(event,current._id)}>
                     {id=current.id}
                     <button type="submit"> Save the recipe </button>
                     </form>
 
-                    <button type="submit" onClick={deleteRecipe(current._id)}>Delete the recipe </button>
+                    <button type="submit" onClick={(event) =>deleteRecipe(event,current._id) }>{id=current.id} Delete the recipe </button>
                     
 
                 </div>
@@ -67,3 +75,4 @@ let id = null
     
 )
 } 
+

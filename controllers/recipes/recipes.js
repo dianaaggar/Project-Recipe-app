@@ -27,8 +27,10 @@ const showRecipe = async (req, res) => {
 
 // Get a specific recipe by ID
 const findRecipe = async (req, res) => {
+  console.log("checking",req.body.id)
   try {
-    const recipe = await Recipe.findById(req.body);
+    console.log(req.body)
+    const recipe = await Recipe.findById(req.body.id);
     if (!recipe) {
       res.status(404).json({ error: 'Recipe not found' });
     } else {
