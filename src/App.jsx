@@ -14,9 +14,13 @@ function App() {
   const [user, setUser] = useState(getUser());
 
   return (
+    
     <div className="App">
       {user ? (
         <>
+        
+        {/* <img src="https://www.sweetware.com/images/recipetransparent1.png" alt="Logo"></img> */}
+    
           <NavBar user={user} setUser={setUser} />
           <Routes>
             <Route path="/" element={<HomePage />} />

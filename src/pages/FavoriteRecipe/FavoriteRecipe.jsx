@@ -1,18 +1,3 @@
-// import React from 'react';
-// import SavedRecipes from '../../components/SavedRecipes/SavedRecipes'; 
-
-
-// const SavedRecipesPage = () => {
-// return (
-//     <div>
-//         <h1>Saved </h1>
-//         <SavedRecipes />
-//     </div>
-// );
-// };
-
-// export default SavedRecipesPage;
-
 import { useState, useEffect } from "react";
 import { showRecipe } from "../../utilities/homePage";
 
@@ -22,7 +7,7 @@ export default function FavoriteRecipe(){
     const[inforecipe, setInforecipe] = useState();
 
     let id = null
-    
+
     useEffect(() =>{ 
         
         const getallrecipe= showRecipe() 

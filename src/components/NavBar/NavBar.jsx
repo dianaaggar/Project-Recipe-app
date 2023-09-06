@@ -9,7 +9,8 @@ export default function NavBar({ user, setUser }) {
   }
 
   return (
-    <nav>
+    <nav className='navbar'>
+      <img src="https://www.sweetware.com/images/recipetransparent1.png" className='logoImg' alt="Logo"></img>
       <Link to="/">Home</Link>
       <Link to="/createRecipe">Create Recipe</Link>
       &nbsp;  &nbsp;
