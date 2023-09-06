@@ -6,7 +6,7 @@
   --tan-3: #023047;
   --tan-4: #90a955;
   --orange: #ffbd00;
-  --text-light: #023047;
+  --text-light: #ffbd00;
   --text-dark: #90a955;
 }
 
@@ -34,6 +34,12 @@ code {
 
 .App {
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
 #root {
@@ -84,10 +90,14 @@ code {
 }
 
 .form-container {
-  padding: 3vmin;
-  background-color: var(--tan-1);
-  border: .1vmin solid var(--tan-3);
-  border-radius: 1vmin;
+  padding: 1vmin;
+  padding-top: 140px;
+  background-image: url('https://us.123rf.com/450wm/didecs/didecs1504/didecs150400007/38487573-old-recipe-note-background-concept.jpg?ver=6');
+  
+  border-radius: 10px;
+  height: 450px;
+  width: 360px;
+
 }
 
 p.error-message {
@@ -158,19 +168,15 @@ button[type="submit"] {
 }
 
 
-.App {
+/* .App {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-}
+} */
 
-body {
-  margin: 0;
-  padding: 0;
-}
 
 .auth {
   display: flex;
@@ -223,7 +229,7 @@ input {
 }
 
 a {
-  color: white;
+  color: orange;
   text-decoration: none;
   margin: 10px;
   font-size: 30px;
@@ -236,11 +242,16 @@ a {
   justify-content: center;
   align-items: center;
   padding: 20px;
-  background-color: white;
+
+  background-image: url('https://d3h2k7ug3o5pb3.cloudfront.net/image/2020-11-23/3b788920-2d79-11eb-9dcd-8b2ef5358591.jpg');
+  background-size: 700px;
   border-radius: 5px;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  /* box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); */
   margin: 20px;
-  width: 400px;
+  width: 700px;
+  color: orange;
+  font-size: 24px;
+  font-weight: bold;
 }
 .create-recipe form {
   display: flex;
@@ -269,13 +280,14 @@ img {
 }
 
 img {
-  width: 400px;
+  width: 500px;
 }
 
 p {
   max-width: 400px;
   font-size: 12px;
 }
+
 .logoImg{
   margin-top: 20px;
   height: 150px;
