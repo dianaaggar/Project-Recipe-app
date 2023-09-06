@@ -45,11 +45,11 @@ export default function HomePage(){
             return(
 
                 <div key={i}>
-                <h2> Name:  {current.name} </h2>
+                <h1> Name:  {current.name} </h1>
             
                 <h4> Description: {current.description} </h4> 
                     
-                <h4> Ingredients: {current.ingredients} </h4>
+                <h3> Ingredients: {current.ingredients} </h3>
                 
                 <h4> Instructions: {current.instructions} </h4>
                     
@@ -58,11 +58,11 @@ export default function HomePage(){
                     <img src={current.imageUrl} alt=""/>
 
 
-                    <form>
-                    <button type="submit" onClick={(event)=> save(event,current._id)}>
+                    <form className="butt">
+                    <button type="submit" className="buttA" onClick={(event)=> save(event,current._id)}>
                     {id=current.id} Add to the Favorite recipe </button>
                     
-                    <button type="submit" onClick={(event) =>deleteRecipe(event,current._id) }>{id=current.id} Delete the recipe </button>
+                    <button type="submit" className="buttD" onClick={(event) =>deleteRecipe(event,current._id) }>{id=current.id} Delete the recipe </button>
                 
 
                     </form>

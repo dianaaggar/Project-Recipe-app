@@ -64,11 +64,9 @@ export default function FavoriteRecipe(){
                     <img src={current.imageUrl} alt=""/>
 
 
-                    <form>
-                    {/* <button type="submit" onClick={(event)=> save(event,current._id)}>
-                    {id=current.id} Add to the Favorite recipe </button> */}
-                    
-                    <button type="submit" onClick={(event) =>deleteRecipe(event,current._id) }>{id=current.id} Delete the recipe </button>
+                    <form >
+
+                    <button type="submit" className="buttD" onClick={(event) =>deleteRecipe(event,current._id) }>{id=current.id} Delete the recipe </button>
                 
 
                     </form>

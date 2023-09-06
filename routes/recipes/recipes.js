@@ -31,37 +31,8 @@ try {
     res.status(500).json({ error: err.message });
 }});
 
-// Update a recipe by ID
-// router.put('/:id', async (req, res) => {
-// try {
-//     const updatedRecipe = await Recipe.findByIdAndUpdate(
-//     req.params.id,
-//     req.body,
-//     { new: true }
-//     );
-//     if (!updatedRecipe) {
-//     res.status(404).json({ error: 'Recipe not found' });
-//     } else {
-//     res.status(200).json(updatedRecipe);
-//     }
-// } catch (err) {
-//     res.status(500).json({ error: err.message });
-// }});
-
-// router.put('/:id', Recipe.updateRecipeById) 
 
 // Delete a recipe by ID
-// router.delete('/:id', async (req, res) => {
-// try {
-//     const deletedRecipe = await Recipe.findByIdAndRemove(req.params.id);
-//     if (!deletedRecipe) {
-//     res.status(404).json({ error: 'Recipe not found' });
-//     } else {
-//     res.status(200).json({ message: 'Recipe deleted' });
-//     }
-// } catch (err) {
-//     res.status(500).json({ error: err.message });
-// }});
 
 router.delete('/:id', Recipe.deleteRecipeById) 
 

@@ -90,12 +90,13 @@ code {
 }
 
 .form-container {
-  padding: 1vmin;
-  padding-top: 140px;
-  background-image: url('https://us.123rf.com/450wm/didecs/didecs1504/didecs150400007/38487573-old-recipe-note-background-concept.jpg?ver=6');
+  padding-top: 120px;
+  padding-left: 55px;
+  padding-right: 80px;
+  background-image: url('https://static9.depositphotos.com/1177973/1198/i/450/depositphotos_11986329-stock-photo-paper-for-recipes-vegetables-and.jpg');
   border-radius: 10px;
-  height: 450px;
-  width: 360px;
+  height: 400px;
+  width: 600px;
 
 }
 
@@ -233,6 +234,7 @@ a {
   padding: 10px;
 
   background-image: url('https://d3h2k7ug3o5pb3.cloudfront.net/image/2020-11-23/3b788920-2d79-11eb-9dcd-8b2ef5358591.jpg');
+
   background-size: 700px;
   border-radius: 5px;
   /* box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); */
@@ -281,4 +283,37 @@ p {
   margin-top: 20px;
   height: 150px;
   width: 200px;
+}
+.butt{
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+  
+
+}
+.buttD{
+  cursor: pointer;
+  background-color: red;
+  height: 40px;
+  width: 200px;
+  align-items: center;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.buttA{
+  cursor: pointer;
+  background-color: green;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.buttS{
+  cursor: pointer;
+  height: 40px;
+  width: 150px;
+  border-radius: 5px;
+  border: 3px solid green;
+  font-size: 20px;
+
 }
