@@ -4,7 +4,8 @@ import { getUser } from './utilities/users-service';
 
 import AuthPage from './pages/AuthPage/AuthPage';
 import CreateRecipe from './pages/CreateRecipe/CreateRecipe';
-import SavedRecipesPage from './pages/SavedRecipesPage/SavedRecipesPage';
+// import SavedRecipesPage from './pages/SavedRecipesPage/SavedRecipesPage';
+import FavoriteRecipe from './pages/FavoriteRecipe/FavoriteRecipe'
 import HomePage from './pages/HomePage/HomePage';
 import NavBar from './components/NavBar/NavBar';
 import './App.css';
@@ -21,7 +22,8 @@ function App() {
             <Route path="/" element={<HomePage />} />
             <Route path="/auth" element={<AuthPage user={user} setUser={setUser} />} />
             <Route path="/createRecipe" element={<CreateRecipe user={user} setUser={setUser} />} />
-            <Route path="/savedRecipes" element={<SavedRecipesPage user={user} setUser={setUser} />} />
+            {/* <Route path="/savedRecipes" element={<SavedRecipesPage user={user} setUser={setUser} />} /> */}
+            <Route path="/savedRecipes" element={<FavoriteRecipe user={user} setUser={setUser} />} />
           </Routes>
         </>
       ) : (

@@ -1,11 +1,28 @@
+// import React from 'react';
+// import SavedRecipes from '../../components/SavedRecipes/SavedRecipes'; 
+
+
+// const SavedRecipesPage = () => {
+// return (
+//     <div>
+//         <h1>Saved </h1>
+//         <SavedRecipes />
+//     </div>
+// );
+// };
+
+// export default SavedRecipesPage;
+
 import { useState, useEffect } from "react";
 import { showRecipe } from "../../utilities/homePage";
 
 import * as savedRecipesUtilities from "../../utilities/savedRecipes"
 
-export default function HomePage(){
+export default function FavoriteRecipe(){
     const[inforecipe, setInforecipe] = useState();
+
     let id = null
+    
     useEffect(() =>{ 
         
         const getallrecipe= showRecipe() 
@@ -19,15 +36,19 @@ export default function HomePage(){
     },[])
     console.log('reciiipes', inforecipe)
 
-    const save = async (event,id) =>{ 
-        event.preventDefault()
+    // const save = async (event,id) =>{ 
+    //     event.preventDefault()
+
         // const findRecipe = await axios.post("recipes/recipes/findrecipe",{id})
         // console.log(id)
         // console.log(findRecipe.data)
-        const response = await savedRecipesUtilities.findRecipe({id})
-        console.log(response)
 
-    }
+
+    //     const response = await savedRecipesUtilities.findRecipe({id})
+    //     console.log(response)
+    // }
+
+
 
     const deleteRecipe = async (event,id) =>{
         event.preventDefault()
@@ -59,8 +80,8 @@ export default function HomePage(){
 
 
                     <form>
-                    <button type="submit" onClick={(event)=> save(event,current._id)}>
-                    {id=current.id} Add to the Favorite recipe </button>
+                    {/* <button type="submit" onClick={(event)=> save(event,current._id)}>
+                    {id=current.id} Add to the Favorite recipe </button> */}
                     
                     <button type="submit" onClick={(event) =>deleteRecipe(event,current._id) }>{id=current.id} Delete the recipe </button>
                 

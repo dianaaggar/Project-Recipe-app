@@ -12,8 +12,8 @@ export default function NavBar({ user, setUser }) {
     <nav>
       <Link to="/">Home</Link>
       <Link to="/createRecipe">Create Recipe</Link>
-      &nbsp; | &nbsp;
-      <Link to="/savedRecipes">Saved Recipes</Link>
+      &nbsp;  &nbsp;
+      <Link to="/savedRecipes">Favorite Recipe</Link>
       &nbsp;&nbsp; 
       {/* <span>Welcome, {user.name}</span>
       &nbsp;&nbsp; */}
