@@ -39,3 +39,6 @@ https://recipe-app-082p.onrender.com
 3- once the recipe is created you can Click "add to the favorite recipe" button to store it in favorite recipe page. or you can click " delete" button to delete the recipe.
 
 ![](images/IMG_6693.jpg)
+![](images/IMG_6694.jpg)
+![](images/IMG_6695.jpg)
+![](images/MERN-stack.png)
