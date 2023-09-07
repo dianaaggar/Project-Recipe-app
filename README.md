@@ -30,6 +30,34 @@ the file .env stores configuration variables and sensitive information that shou
 
 ## 5- connect to github and Deploy the app using render.com 
 
+## Technologies Used
+HTML | CSS | MongoDB | Express | React | Node.js | Mongoose | Axios | Bcrypt | JSON Webtoken |
+
+npx create-react-app "name of the project"
+
+npm start => Starts the development server.
+
+npm run build => Bundles the app into static files for production.
+
+npm test => Starts the test runner.
+
+npm run eject => Removes this tool and copies build dependencies, configuration files
+    and scripts into the app directory. If you do this, you can’t go back!
+
+npm i express morgan serve-favicon => Install the Modules for the Express Server.
+
+nodemon server => to run server Backend.
+
+npm i react-router-dom => install react router 
+
+npm i dotenv => .env  file a way to access environment variables and secrets.
+
+npm i mongoose => Install mongoose and Connect to a Database.
+
+npm i bcrypt =>  install and used to hash data.
+
+
+
 ## Live Deployment: 
 https://recipe-app-082p.onrender.com
 
