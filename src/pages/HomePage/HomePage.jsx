@@ -37,6 +37,12 @@ export default function HomePage(){
         console.log(deleteRecipes)
     }
 
+    const editRecipe = async (event,id) =>{
+        event.preventDefault()
+
+        const editRecipes = await savedRecipesUtilities.editRecipe(id)
+        console.log(editRecipes)
+    }
 
 
     return(
@@ -66,6 +72,10 @@ export default function HomePage(){
                     <form className="butt">
                     <button type="submit" className="buttA" onClick={(event)=> save(event,current._id)}>
                     {id=current.id} Add to the Favorite recipe </button>
+
+                    <button type="submit" className="buttE" onClick={(event)=> editRecipe(event,current._id)}>
+                    {id=current.id} Edit the recipe </button>
+                    
                     
                     <button type="submit" className="buttD" onClick={(event) =>deleteRecipe(event,current._id) }>{id=current.id} Delete the recipe </button>
                 

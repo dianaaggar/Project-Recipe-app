@@ -317,3 +317,14 @@ p {
   font-size: 20px;
 
 }
+
+.buttE{
+  cursor: pointer;
+  background-color: orange;
+  height: 40px;
+  width: 200px;
+  align-items: center;
+  font-weight: bold;
+  font-size: 20px;
+
+}

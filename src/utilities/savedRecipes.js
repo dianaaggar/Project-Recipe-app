@@ -37,3 +37,17 @@ export const findRecipe = async (data) => {
         }
         };
 
+        export const editRecipe = async (id) => {
+            console.log(id)
+            try {
+            const postrecipe = await axios.delete(`recipes/recipes/${id}`);
+            return(
+                postrecipe.data
+            )
+            } catch (error) {
+                console.error(error);
+            }
+            };
+    
+    
+
