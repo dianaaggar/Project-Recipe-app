@@ -1,6 +1,7 @@
 import * as createRecipe from '../../utilities/createRecipe'
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import {getUser} from '../../utilities/users-service'
 
 
 export default function CreateRecipe(){
@@ -12,7 +13,7 @@ export default function CreateRecipe(){
     instructions: "",
     imageUrl: "",
     cookingTime: 0,
-
+user: getUser().name
 });
 
     const navigate = useNavigate();

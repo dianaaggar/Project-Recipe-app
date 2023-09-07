@@ -34,6 +34,11 @@ createdAt: {
     default: Date.now,
     },
 
+    user: {
+        type: String,
+        required: true,
+        },
+
 });
 
 // create a Mongoose model for Recipe
@@ -41,3 +46,4 @@ const Recipe = mongoose.model('Recipe', recipeSchema);
 
 // export the Recipe model to be used in other parts of the application
 module.exports = Recipe;
+

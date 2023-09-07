@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { showRecipe } from "../../utilities/homePage";
+import { getUser } from "../../utilities/users-service";
 
 import * as savedRecipesUtilities from "../../utilities/savedRecipes"
 
@@ -47,6 +48,8 @@ export default function FavoriteRecipe(){
     return(
     <div>
         {inforecipe? inforecipe.map((current,i)=>{
+
+            if (current.user === getUser().name){
             
             return(
 
@@ -73,9 +76,12 @@ export default function FavoriteRecipe(){
 
                 </div>
             )
-        
+            
+            }
 
         }): ""}
+
+    
 
     </div>
 
