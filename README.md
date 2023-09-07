@@ -38,3 +38,4 @@ https://recipe-app-082p.onrender.com
 2- in NavBar you click create recipe to create any recipes and add all the details, like ingredients , copy an image address and past it in imageUrl. 
 3- once the recipe is created you can Click "add to the favorite recipe" button to store it in favorite recipe page. or you can click " delete" button to delete the recipe.
 
+![](images/IMG_6693.jpg)
